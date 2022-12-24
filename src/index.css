@@ -1,0 +1,121 @@
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+
+body{
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+}
+img{
+  max-width:100%;
+  object-fit: cover;
+  width:4em;
+  aspect-ratio: 1/1;
+  border-radius: 3px;
+  padding:.3em;
+  transition: .2s ease-in-out;
+  cursor: pointer;
+}
+img:hover{
+  transform: scale(1.1);
+  background-color:rgb(150, 82, 119);
+}
+.board{
+  width:80%;
+  height:70vh;
+  padding:2em 0;
+  margin:auto;
+  background: rgb(27, 18, 27);
+  position: relative;
+}
+
+.dice-container{
+  position: relative;
+  top:4em;
+}
+
+button{
+  position: absolute;
+  bottom:1em;
+  width:40%;
+  left:-50%;
+  right:-50%;
+  margin:auto;
+  display:block;
+  padding:.5em;
+  background-color:rgb(43, 24, 56);
+  border:none;
+  border-radius: 10px;
+  color:white;
+  font-size:1.2rem;
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+button:active{
+  box-shadow: -7px 4px 4px inset rgba(0, 0, 0, 0.623);
+}
+.game-prompt{
+  color: rgb(14, 240, 14);
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.rollsCount{
+  color:white;
+  font-size: 2rem;
+  position: absolute;
+  top:.3em;
+  left:.3em;
+  border:1px solid cyan;
+  padding:.2em .3em;
+}
+.timer{
+  color:cyan;
+  font-size:2rem;
+  position: absolute;
+  top:.3em;
+  right:.3em;
+  padding:.3em;
+  border: 1px solid red;
+}
+.you-lost{
+  text-transform: uppercase;
+  color:red;
+  margin-top:3em;
+}
+
+@media (min-width:50rem) {
+  .board{
+    min-width:600px;
+  }
+  .dice-container{
+    display:flex;
+    flex-wrap: wrap;
+    max-width:380px;
+    position: absolute;
+    left:-50%;
+    right:-50%;
+    margin:auto;
+    top:12em;
+    gap:10px;
+  }
+  button{
+    max-width:20%;
+    bottom:2em;
+    transition: .3s;
+  }
+  button:hover{
+     opacity: .8;
+     color:cyan
+  }
+}
